@@ -22,11 +22,13 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 // Creating sun
-const sunGeo = new THREE.SphereGeometry(1.5, 32, 32);
+const sunGeo = new THREE.SphereGeometry(1.2, 32, 32);
 const sunMat = new THREE.MeshStandardMaterial({
-  color: 0xFFFF00,
-  emissive: 0xFFFF33,
-  emissiveIntensity: 1.5,
+  color: 0xFFFFFF,               // The Sun emits white light in space
+  emissive: 0xFFF5E1,            // Soft warm white to simulate glow
+  emissiveIntensity: 30,         // High intensity to simulate brightness
+  metalness: 0.0,                // No metal-like reflection
+  roughness: 0.2,                // Slight smoothness for stylized surface
 });
 const sun = new THREE.Mesh(sunGeo, sunMat);
 sun.position.set(0, 0, 0);
