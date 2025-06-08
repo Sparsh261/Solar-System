@@ -11,7 +11,7 @@ function Planet(name, radius, orbitDistance, textureFile, speed, hasRings = fals
     const geometry = new THREE.SphereGeometry(radius, 64, 64);
 
     const material = new THREE.MeshStandardMaterial({
-        map: textureFile ? loadTexture(`src/assets/Textures/${textureFile}`) : null,
+        map: textureFile ? loadTexture(`/Textures/${textureFile}`) : null,
     });
 
     const mesh = new THREE.Mesh(geometry, material);
