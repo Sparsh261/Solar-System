@@ -6,6 +6,5 @@
 # To run, go to /solar_system
 
 # run in terminal
-#    npm start
-#        or
-#    npm run dev
+#    npm i
+#    npm start or npm run dev
