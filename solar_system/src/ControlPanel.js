@@ -3,6 +3,18 @@ import { planets } from "./main";
 const controlPanel = document.getElementById('controlPanel');
 
 const addSlider = () => {
+    
+    const container = document.createElement('div');
+    container.style.display = 'none';
+    const button = document.createElement('button');
+
+    button.textContent = "Change speed";
+    button.style.margin = "5px";
+    button.addEventListener('click',()=>{
+        button.textContent = button.textContent == 'Change speed' ? 'Close' : 'Change speed';
+        container.style.display = container.style.display == 'none' ? 'block' : 'none';
+    });
+    controlPanel.appendChild(button);
 
     planets.forEach((planet, index) => {
         const label = document.createElement('label');
@@ -22,8 +34,9 @@ const addSlider = () => {
         });
 
         label.appendChild(slider);
-        controlPanel.appendChild(label);
+        container.appendChild(label);
     });
+    controlPanel.appendChild(container);
 
 }
 export { addSlider };
